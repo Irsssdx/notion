@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1" name="viewport" />
+	<link rel="stylesheet" type="text/css" href="boxicons/css/boxicons.css">
+	<link rel="stylesheet" href="bootstrap5/css/bootstrap.min.css">
+
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	
+	<!--<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet"> -->
+
+
+	<title>Notion</title>
+</head>
+<body>
+	
+
+	<div class="container my-5 pb-5">
+
+		<div class="text-center my-5"><button id="light-mode" class="btn btn-secondary btn-sm" onclick="lightmode()">LIGHT MODE</button></div>
+
+		<div class="dashboard-banner-img mb-5">
+			<a href="index.html">
+				<img src="images/banner.jpg">
+			</a>
+			<div class="drink-banner-img">🥂</div>
+		</div>
+
+		<h1>〰️ <br />MongoDB Query</h1>
+
+		<div class="my-5">
+
+			
+
+
+
+			<h4>🥂 MongoDB Insert Query -------- insertOne() &nbsp/&nbsp insertMany() </h4>
+			<!-- <h6 class="pt-3"># GET METHOD</h6> -->
+			<pre class="pre-tag-design-coding-format">
+User.insertOne({ name: "Company Inc", address: "Highway 37" });
+
+User.insertMany([
+    { name: 'John', address: 'Highway 71'},
+    { name: 'Peter', address: 'Lowstreet 4'},
+    { name: 'Amy', address: 'Apple st 652'},
+]);
+			</pre>
+
+
+
+
+
+			<h4>🥂 MongoDB Read Query -------- find() &nbsp/&nbsp findOne() </h4>
+			<!-- <h6 class="pt-3"># GET METHOD</h6> -->
+			<pre class="pre-tag-design-coding-format">
+User.find();
+
+User.findOne({ _id: id });
+
+<span class="text-white-50">// PROJECTION --- means which fields you want to include
+// 0 = exclude (it will not display) & 1 = include</span>
+
+User.find({}, { projection: { _id: 0, name: 1, address: 1 });
+User.findOne({ _id: id }, { projection: { _id: 0, name: 1, address: 1 });
+
+<span class="text-white-50">// OUTPUT</span>
+[
+	{ name: 'John', address: 'Highway 71'},
+	{ name: 'Peter', address: 'Lowstreet 4'},
+	{ name: 'Amy', address: 'Apple st 652'},
+]
+			</pre>
+
+
+
+
+
+			<h4>🥂 MongoDB SORTING -------- .sort() </h4>
+			<!-- <h6 class="pt-3"># GET METHOD</h6> -->
+			<pre class="pre-tag-design-coding-format">
+User.find().sort({ name: 1 });
+
+<span class="text-white-50">// 1 means sort alphabetically a-z in ascending order & -1 means z-a in descending order</span>
+			</pre>
+
+
+		</div>
+
+
+		
+	</div>
+
+
+	<script src="bootstrap5/js/bootstrap.min.js"></script>
+
+	<script src="js/main.js"></script>
+
+</body>
+</html>

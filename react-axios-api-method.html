@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1" name="viewport" />
+	<link rel="stylesheet" type="text/css" href="boxicons/css/boxicons.css">
+	<link rel="stylesheet" href="bootstrap5/css/bootstrap.min.css">
+
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	
+	<!--<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet"> -->
+
+
+	<title>Notion</title>
+</head>
+<body>
+
+	<div class="container my-5 pb-5">
+
+		<div class="text-center my-5"><button id="light-mode" class="btn btn-secondary btn-sm" onclick="lightmode()">LIGHT MODE</button></div>
+
+		<div class="dashboard-banner-img mb-5">
+			<a href="index.html">
+				<img src="images/banner.jpg">
+			</a>
+			<div class="drink-banner-img">🥂</div>
+		</div>
+
+		<h1>〰️ <br />React Axios Api Method</h1>
+
+		<div class="my-5">
+
+			<h4>🥂 If you've to pass headers in API for some security reasons that's how you do it</h4>
+			<!-- <h6 class="pt-3"># GET METHOD</h6> -->
+			<pre class="pre-tag-design-coding-format">
+axios.post("https://jsonplaceholder.typicode.com/users", {data}, {
+    headers: {'Content-Type': "application/json"},
+    withCredentials: false,  //for proxy request error
+    auth: {
+        username: "testing",
+        password: "testing"
+    }
+})
+.then().catch()
+			</pre>
+
+			<h4>1. Fetch Api Method using axios.get() with Error Handling</h4>
+			<h6 class="pt-3"># GET METHOD</h6>
+			<pre class="pre-tag-design-coding-format">
+axios.get("https://jsonplaceholder.typicode.com/users")
+.then((res) => {
+	console.log(res.data)
+})
+.catch((err) => {
+    setIsError(err.message)
+})
+
+if(isError) {
+    return <tag>Error: {isError}</tag>;
+}
+			</pre>
+			
+			<h4>2. Fetch Api Method using fetch().then().then().catch()</h4>
+			<h6 class="pt-3"># PUT, POST & DELETE METHOD</h6>
+			<pre class="pre-tag-design-coding-format">
+
+//DELETE
+axios.delete("https://jsonplaceholder.typicode.com/users")
+.then().catch()
+
+//PUT / UPDATE
+axios.put("https://jsonplaceholder.typicode.com/users/1", {data} )
+.then().catch()
+
+//POST
+axios.post("https://jsonplaceholder.typicode.com/users", {data} )
+.then().catch()
+			</pre>			
+
+
+		</div>
+
+
+		
+	</div>
+
+
+	<script src="bootstrap5/js/bootstrap.min.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>

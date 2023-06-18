@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1" name="viewport" />
+	<link rel="stylesheet" type="text/css" href="boxicons/css/boxicons.css">
+	<link rel="stylesheet" href="bootstrap5/css/bootstrap.min.css">
+
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	
+	<!--<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet"> -->
+
+
+	<title>Notion</title>
+</head>
+<body>
+
+	<div class="container my-5 pb-5">
+
+		<div class="text-center my-5"><button id="light-mode" class="btn btn-secondary btn-sm" onclick="lightmode()">LIGHT MODE</button></div>
+
+		<div class="dashboard-banner-img mb-5">
+			<a href="index.html">
+				<img src="images/banner.jpg">
+			</a>
+
+			<div class="drink-banner-img">🥂</div>
+		</div>
+
+		<h1>〰️ <br />React Fetch Api Method</h1>
+
+		<div class="my-5">
+
+			<h4>🥂 If you've to pass headers in get API for some security reasons that's how you do it</h4>
+			<!-- <h6 class="pt-3"># GET METHOD</h6> -->
+			<pre class="pre-tag-design-coding-format">
+fetch(URL, {
+    headers: {
+	    company_id: "123456789"
+    }
+})
+			</pre>
+
+			<h4>1. Fetch Api Method using fetch() with try & catch block statement</h4>
+			<h6 class="pt-3"># GET METHOD</h6>
+			<pre class="pre-tag-design-coding-format">
+const fetch_api = async (URL) => {
+	try{
+		const res = fetch(URL);
+		const data = await data.json();
+		console.log("Data = ", data);
+	} catch (err) {
+		console.log("Error = ", err);
+	}
+}
+			</pre>
+			
+			<h4>2. Fetch Api Method using fetch().then().then().catch()</h4>
+
+			<h6 class="pt-3"># GET METHOD</h6>
+			<pre class="pre-tag-design-coding-format">
+fetch(URL)
+.then((res) => res.json())
+.then((json_data) => {
+    console.log("JSON_DATA = ", json_data);
+    setData(json_data)
+})
+.catch((err) => {
+    console.log("Error came = ", err);
+})
+			</pre>
+
+			<h6 class="pt-3"># PUT & POST METHOD</h6>
+			<pre class="pre-tag-design-coding-format">
+const data = {
+    id: "def234",
+    name: "alan", 
+    age: 21,
+}
+
+const URL = data.id ? "https://jsonplaceholder.typicode.com/comments/" + data.id : "https://jsonplaceholder.typicode.com/comments";
+
+fetch(URL, {
+    method: data.id ? "PUT" : "POST",
+    headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*"
+    },
+    body: JSON.stringify(data)
+})
+.then((res) => res.json())
+.then((json_data) => {
+    console.log("JSON_DATA = ", json_data);
+    setData(json_data)
+})
+.catch((err) => {
+    console.log("Error came = ", err);
+})
+			</pre>			
+
+
+		</div>
+
+
+		
+	</div>
+
+
+	<script src="bootstrap5/js/bootstrap.min.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>
